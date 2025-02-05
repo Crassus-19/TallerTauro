@@ -3,6 +3,7 @@ $servername = "vehiculos.mysql.database.azure.com";
 $username = "trhbkrtgaa@vehiculos";
 $password = "Stanley26";  // Si no tienes, usa ""
 $database = "vehiculos";
+$port = 3306;
 
 // Crear conexión
 $connection = new mysqli($servername, $username, $password, $database);
