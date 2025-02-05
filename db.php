@@ -1,14 +1,19 @@
 <?php
-$host = "vehiculos.mysql.database.azure.com";  // Servidor de MySQL en Azure
-$usuario = "trhbkrtgaa@vehiculos";             // Usuario administrador
-$contraseña = "Stanley26";                               // Dejar vacío si no tienes contraseña
-$bd = "vehiculos";                             // Nombre de la base de datos
+$servername = "vehiculos.mysql.database.azure.com";
+$username = "trhbkrtgaa@vehiculos"; // Ensure '@vehiculos' is included
+$password = "Stanley26";  // Replace with your actual password
+$database = "vehiculos";
+$port = 3306;
+$ssl_cert = "/path-to-cert/DigiCertGlobalRootCA.crt.pem"; // Update this path
 
-// Crear conexión
-$connection = new mysqli($host, $usuario, $contraseña, $bd);
+// ✅ Secure MySQL connection using SSL
+$connection = mysqli_init();
+mysqli_ssl_set($connection, NULL, NULL, $ssl_cert, NULL, NULL);
+mysqli_real_connect($connection, $servername, $username, $password, $database, $port, NULL, MYSQLI_CLIENT_SSL);
 
-// Verificar conexión
-if ($connection->connect_error) {
-    die("Error de conexión a MySQL: " . $connection->connect_error);
+if (mysqli_connect_errno()) {
+    die("❌ Connection failed: " . mysqli_connect_error());
+} else {
+    echo "✅ Connected to Azure MySQL successfully!";
 }
 ?>
