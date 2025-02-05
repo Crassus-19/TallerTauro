@@ -1,9 +1,11 @@
 <?php
-$connection = new mysqli("localhost", "root", "root", "vehiculos");
+$servername = "vehiculos.mysql.database.azure.com";
+$username = "trhbkrtgaa@vehiculos";
+$password = "Stanley26";  // Si no tienes, usa ""
+$database = "vehiculos";
 
-if ($connection->connect_error) {
-    die("Error de conexión: " . $connection->connect_error);
-}
+// Crear conexión
+$connection = new mysqli($servername, $username, $password, $database);
 
 function registrar_log($tabla, $operacion, $registro_id, $detalles = "", $usuario = "admin") {
     global $connection;

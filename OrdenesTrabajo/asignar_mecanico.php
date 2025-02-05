@@ -1,5 +1,12 @@
 <?php
-$connection = new mysqli("localhost", "root", "root", "vehiculos");
+$servername = "vehiculos.mysql.database.azure.com";
+$username = "trhbkrtgaa@vehiculos";
+$password = "Stanley26";  // Si no tienes, usa ""
+$database = "vehiculos";
+
+// Crear conexión
+$connection = new mysqli($servername, $username, $password, $database);
+
 
 $id = $_GET["id"] ?? null;
 if (!$id) {

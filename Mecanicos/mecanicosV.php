@@ -1,10 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
+$servername = "vehiculos.mysql.database.azure.com";
+$username = "trhbkrtgaa@vehiculos";
+$password = "Stanley26";  // Si no tienes, usa ""
 $database = "vehiculos";
 
-// Conectar a la base de datos
+// Crear conexión
 $connection = new mysqli($servername, $username, $password, $database);
 
 // Verificar conexión

@@ -2,11 +2,11 @@
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
+    $servername = "vehiculos.mysql.database.azure.com";
+    $username = "trhbkrtgaa@vehiculos";
+    $password = "Stanley26";  // Si no tienes, usa ""
     $database = "vehiculos";
-
+    
     // Crear conexión
     $connection = new mysqli($servername, $username, $password, $database);
 

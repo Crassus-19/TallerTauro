@@ -1,8 +1,11 @@
 <?php
-$connection = new mysqli("localhost", "root", "root", "vehiculos");
-if ($connection->connect_error) {
-    die("Error de conexión: " . $connection->connect_error);
-}
+$servername = "vehiculos.mysql.database.azure.com";
+$username = "trhbkrtgaa@vehiculos";
+$password = "Stanley26";  // Si no tienes, usa ""
+$database = "vehiculos";
+
+// Crear conexión
+$connection = new mysqli($servername, $username, $password, $database);
 
 // Lista de columnas permitidas para ordenamiento
 $valid_columns = ['Unidad', 'Descripcion', 'Asignacion', 'Estado', 'Mecanico', 'Prioridad', 'Fecha'];

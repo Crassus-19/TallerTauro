@@ -12,16 +12,13 @@
         <a class="btn btn-primary mb-3" href="create.php" role="button">Nueva Unidad</a>
 
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
+        $servername = "vehiculos.mysql.database.azure.com";
+        $username = "trhbkrtgaa@vehiculos";
+        $password = "Stanley26";  // Si no tienes, usa ""
         $database = "vehiculos";
-
-        // Conectar a la base de datos
+        
+        // Crear conexión
         $connection = new mysqli($servername, $username, $password, $database);
-        if ($connection->connect_error) {
-            die("Error de conexión: " . $connection->connect_error);
-        }
 
         // Definir orden y columna por defecto
         $column = isset($_GET['column']) ? $_GET['column'] : 'ID';
