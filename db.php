@@ -4,7 +4,7 @@ $username = "trhbkrtgaa@vehiculos"; // Ensure '@vehiculos' is included
 $password = "Stanley26";  // Replace with your actual password
 $database = "vehiculos";
 $port = 3306;
-$ssl_cert = "/path-to-cert/DigiCertGlobalRootCA.crt.pem"; // Update this path
+$ssl_cert = "DigiCertGlobalRootCA.crt.pem"; // Update this path
 
 // ✅ Secure MySQL connection using SSL
 $connection = mysqli_init();
